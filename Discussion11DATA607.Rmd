@@ -1,0 +1,59 @@
+---
+title: "CUNY SPS - Master of Science in Data Science - DATA607"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+### Mario Pena
+### 11/06/2019
+
+
+## Discussion 11: Recommender Systems
+
+## Introduction
+
+Spotify is a digital music, podcast, and video streaming service that gives you access to millions of songs and other content from artists all over the world. I decided to use Spotify as an example in this discussion because in my opinion it is one of the best among music streaming services when it comes to recommendations. They provide several playlists that offer recommendations, from "Discover Weekly" to multiple "Daily Mix" playlists for listeners to indulge in. 
+
+## Scenario Design
+
+*Who are the target users?*
+
+-The target users are customers who have subscribed and created a Spotify account.
+
+*What are their key goals?*
+
+-Their key goal is to find and listen to music they love while also discovering new music.
+
+*How can Spotify help them accomplish these goals?*
+
+-Spotify has an extensive library of music that users can explore by using its search engine or diving right into its many playlists in various categories. Spotify also makes use of a very well designed and built recommendation system that allows users to discover new music or songs they haven't heard in years based on preferences and similar users/songs. Additionally, you can follow artists to be in the loop about their new songs and concert dates.
+
+## Reverse Engineer
+
+While designing Spotify's recommendation engine we have to keep in mind that the company's goal is to provide the best listening experience of any music streaming service available. In order to achieve this objective Spotify supplies customers with one of the largest libraries of music while recommending songs that appeal to their musical taste.
+
+Unlike its competitors, Spotify developed an engine that used three different recommendation models. Their tactic has since changed over the years, but one of the algorithms used to create Spotify's "Discover Weekly" playlists was a mix of the best strategies used in the industry. Spotify combined three different models to analyze the similarity of songs, collaborative filtering, Natural Language Processing (NLP) and audio modeling, which "uses a song’s raw audio to understand the tune of the song and compares it to other songs" (Giacaglia 2019).
+
+**Collaborative Filtering**
+Spotify, in contrast to Netflix, does not have a star-based system with which users rate their music. Instead, Spotify’s data is implicit feedback, based on the users interaction with its software. The way this works is by counting number of streams per songs that users listen to and other data points such as whether a user added a song to a playlist or if they follow an artist. "The algorithm makes predictions about the interests of a user (filtering) by collecting preferences from many users (collaborating)" (Giacaglia 2019). Even though this approach has been the most popular and effective in the past several years, it might not accurately predict songs if let's say one of the user's preferences are widely varied and their taste of music doesn't necessarily appeal to other similar listeners.
+
+**Natural Language Processing (NLP)**
+In order to increase the efficacy of the recommender system Spotify has also employed an NLP model. The data used for this model are words that describe songs and are extracted from blog posts and other written text about music to get a sense of how people feel about specific songs and artists. There are thousands of top terms for each song and artist with various wegihts in correlation to their importance. The model then analyzes these top terms and creates a vector representation of the song that can be used to determine if two pieces of music are similar, ultimately knowing what songs to recommend to a user.
+
+**Audio Modeling**
+Finally, the third model that Spotify employs further refines the efficacy of the recommender system, while also playing an important role in recommending new music to users. The model uses convolutional neural networks, which is the same technology used to analyze images and in facial recognition software, but has been modified to be used on audio data. Some of the data analyzed with this model include characteristics of a song such as estimated time signature, key, mode, tempo and loudness. This approach can recommend songs from artists that may not be as popular and that would otherwie not get selected by the previous two models as it does not rely on people talking about them on the web or users having listened to them on Spotify before.
+
+## Conclusion
+
+Spotify's implementation of three different recommender system approaches has proven to be one of the most effective in the industrty and its users have been able to enjoy an unmatched personalized music listening experience. We can expect for recommendation systems to become more and more complex as we keep exploring the capabilities of machine learning. 
+
+One aspect of Spotify's models I would like to see them revamp is perhaps the algorithm they use for determining the relevance of a song to a user. Tracks that are saved on a user's playlist, in my opinion, should be given higher importance as opposed to tracks they have recently listened to that may not necessarily be saved in a user's playlist. I have experienced that the "Discover Weekly" and "Daily Mix" playlists, which recommend songs, place a lot of weight on songs that I have listened to in the past month and less on the songs that are saved in my playlists but that I may not have listened to in a while. I would like to see more of a balance in the songs being picked as reference for the recommendations in order to enhance the listening experience of users.
+
+
+References:
+
+Giacaglia, G (2019, March 10), "Spotify's Recommendation Engine". Retrieved November 6, 2019, from https://medium.com/datadriveninvestor/behind-spotify-recommendation-engine-a9b5a27a935
+
+https://www.spotify.com/us/, accessed November 6, 2019.
